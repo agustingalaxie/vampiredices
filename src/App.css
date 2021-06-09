@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 .App {
+  font-family: 'Redressed', cursive;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(92,5,5,1) 100%);  text-align: center;
   min-height: 100vh;
