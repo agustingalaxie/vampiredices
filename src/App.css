@@ -1,24 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+:root {
+  --bgc: rgb(157, 2, 8);
+  --bgc2: rgb(106, 4, 15);
+  --font: rgb(226, 220, 222)
+}
 .App {
   font-family: 'Redressed', cursive;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(92,5,5,1) 100%);  text-align: center;
-  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bgc),  var(--bgc2) 100%);  
+  text-align: center;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center;  
   font-size: calc(10px + 2vmin);
-  color: #fff;
+  color: var(--font);
 }
 .display-dice-ul{
   text-decoration: none;
   text-align: center;
 }
+h2{
+  margin-top: 1.5em;
+}
+h3{
+  margin-top: 0.5em;
+}
 li{
   display: inline-block;
   padding: 10px;
 }
+input{
+  background-color: var(--font);
+}
+.display-dice-container{
+  justify-content: center;
+  min-height: 15vh;
+}
 .blankDice{
   height: 70px;
+}
+button{
+  position: relative;
+  padding: 15px 30px;
+  margin: 10px;
+  border: 1px solid black;
+  width: 110px;
+  height: 90px;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--bgc2); 
+  overflow: hidden;
+} 
+button::before{
+  content: "";
+  background-image: url("https://static.thenounproject.com/png/50658-200.png");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgc2); 
+  transition: 0.75s;
+}
+button:hover{
+  background: var(--bgc2); 
+}
+button:hover::before{
+  left: 100%;
+}
+button h1{
+  font-size: 1.3em;
+  font-family: 'Redressed', cursive;
 }
