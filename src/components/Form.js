@@ -11,7 +11,7 @@ const Form = ({ pool, setPool }) => {
             setPool([...pool, { type: "normal", id: Math.random() * 100 }]);
         } else if (value < length) {  //<--- ?????????????????????????????????????????????????????
             normalDicesPool.pop();
-            const newPool = beastDicesPool.concat(normalDicesPool);
+            const newPool = normalDicesPool.concat(beastDicesPool);
             setPool(newPool);
         }
     }
@@ -24,12 +24,13 @@ const Form = ({ pool, setPool }) => {
             setPool([...pool, { type: "beast", id: Math.random() * 100 }]);
         } else if (value < length) {
             beastDicesPool.pop();
-            const newPool = beastDicesPool.concat(normalDicesPool);
+            const newPool = normalDicesPool.concat(beastDicesPool);
             setPool(newPool);
         };
     }
         return (
             <div>
+                <h2>Vampire Dices</h2>
                 <h3>Pool de dados normales</h3>
                 <input type="number" onChange={setPoolHandlerNormal} min="1" max="10" placeholder="0" />
                 <h3>Dados de Bestia</h3>
